@@ -1,10 +1,16 @@
-import React from 'react'
 
-export default function Counter(props) {
+import Histery from "./Histery"
+
+export default function Counter({count,histery}) {
    
   return (
     <div>
-        <h1> count:{props.count}</h1>
+        <h1>counter:{count}</h1>
+
+   <Histery
+   histery={histery}
+
+   ></Histery>
       
     </div>
   )
