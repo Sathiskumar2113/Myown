@@ -1,10 +1,17 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
 
   let [count,setcount]= useState(0);
+
+  useEffect (()=>{
+    console.log ("runs the update the components is mounted and count is updated");
+  } ,[])
+
+
+
 const incremnt=()=>{
 
   setcount(count+1);
