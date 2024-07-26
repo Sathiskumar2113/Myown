@@ -1,51 +1,25 @@
 
-import { useEffect, useState } from 'react';
-import './App.css';
+import React, { useState } from 'react'
+
 import Counter from './components/Counter';
 
-function App() {
+export default function App() {
 
-  let [count,setcount]= useState(0);
-  let[histery,setHistery]=useState([]);
-
-  useEffect(()=>{
-
-    console.log(histery);
-  },[histery]);
+  const [count ,setCount]=useState(0);
   
-const incremnt=()=>{
-
-  setcount(count+1);
-  setHistery([...histery, 'I']);
-}
-
-const decremnt=()=>{
-  setcount(count-1);
-  setHistery([...histery, 'D']);
-
-}
-const resert=()=>{
-  setcount(0);
-  setHistery([...histery, 'R']);
-}
-
-
+  const handlechange=(value)=>{
+    setCount(value)
+  } 
   return (
-    <div className="App">
-     
-     <Counter
-     count={count}
-     histery={histery}
-    
-     ></Counter >
+    <div>
 
+<h1>Counter:{count}</h1>
 
-     <button onClick={incremnt}>incremnt</button>
-     <button onClick={decremnt}>decremnt</button>
-     <button onClick={resert}>Resert</button>
-     
+<Counter
+handlechange={handlechange}
+></Counter>
+      
     </div>
-  );
+  )
 }
-
-export default App;
+// parents components

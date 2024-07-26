@@ -1,17 +1,19 @@
+import React, { useState } from 'react'
 
-import Histery from "./Histery"
 
-export default function Counter({count,histery}) {
-   
+export default function Counter({handlechange}) {
+
+    const [count ,setCount]=useState(0);
+
+  const handleincremnt=()=>{
+    setCount(count+1);
+   handlechange(count +1);
+
+  }
   return (
     <div>
-        <h1>counter:{count}</h1>
-
-   <Histery
-   histery={histery}
-
-   ></Histery>
-      
+      <button onClick={handleincremnt}>increment</button>
     </div>
   )
 }
+// child copoments
